@@ -1,0 +1,20 @@
+# IntelliJ
+default.properties
+local.properties
+*.iml
+.idea
+
+# Build results
+gen
+out
+build
+obj
+
+# Project lint settings
+lint.xml
+
+# Gradle
+.gradle
+
+# Mac OS X
+.DS_STORE
