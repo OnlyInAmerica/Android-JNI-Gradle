@@ -9,6 +9,7 @@ gen
 out
 build
 obj
+libs/*/
 
 # Project lint settings
 lint.xml

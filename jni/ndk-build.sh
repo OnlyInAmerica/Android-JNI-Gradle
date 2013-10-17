@@ -6,10 +6,18 @@ ndk-build
 
 # Generate .jar from .so
 
+jarRoot="../libs/lib"
+
 shopt -s nullglob
-for f in ../libs/armeabi/*.so
-do
-	echo "Generating " ${f::${#f}-3}.jar
-        #echo ${f::${#f}-3}.jar 
-        zip -r -X ${f::${#f}-3}.jar $f
+for dir in ../libs/*/
+do 
+        mkdir $jarRoot
+        cp -r $dir $jarRoot
+        dirName=`basename $dir`
+        jarPath="../libs/"$dirName".jar"
+        echo "zip -r -X" $jarPath " " $jarRoot
+        cd "../libs"
+        zip -r -X $jarPath ./lib
+        cd "../jni"
+        rm -r $jarRoot
 done
