@@ -10,6 +10,7 @@ out
 build
 obj
 libs/*/
+libs/armeabi.jar
 
 # Project lint settings
 lint.xml
